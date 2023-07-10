@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Command : PoolObject
 {
     [SerializeField]
     private KeyCode key;
     private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
+    private bool isSetted;
+    [SerializeField] private TextMeshProUGUI text;
 
     private void OnEnable()
     {
-        //여기에 랜덤하게 키 배정해주는 코드
-
+        if (isSetted) return;
+        isSetted = true;
         key = keyCodes[Random.Range(0, 4)];
+        text.SetText(key.ToString());
     }
 
     public bool InputKey()
@@ -24,5 +28,11 @@ public class Command : PoolObject
             returnValue = true;
         }
         return returnValue;
+    }
+
+    public override void Pooling()
+    {
+        isSetted = false;
+        base.Pooling();
     }
 }

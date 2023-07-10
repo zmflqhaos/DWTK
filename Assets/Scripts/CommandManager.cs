@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CommandManager : MonoSingleton<CommandManager>
 {
@@ -11,15 +12,21 @@ public class CommandManager : MonoSingleton<CommandManager>
     public bool isOpen;
 
     [SerializeField] private int defficult;
+    [SerializeField] GameObject commandTrsObj;
+
+    private int devPersent = -10;
+    [SerializeField] TextMeshProUGUI devPersentTmp;
 
     private void Start()
     {
         MakeCommand(defficult);
+        commandTrsObj.SetActive(false);
     }
 
     public void MakeCommand(int summonCommand)
     {
-        for(int i=0; i<summonCommand; i++)
+        ChangeDevPersent(10);
+        for (int i=0; i<summonCommand; i++)
         {
             Command command = PoolManager.Instance.GetPoolObject("Command").GetComponent<Command>();
             command.transform.SetParent(commandTrs);
@@ -35,17 +42,18 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     private void InputCheck()
     {
-        if(Input.GetKey(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             isOpen = !isOpen;
+            commandTrsObj.SetActive(isOpen);
         }
         else
         {
             if (!isOpen) return;
 
-            if (Input.anyKey)
+            if (Input.anyKeyDown)
             {
-                nextCommand.InputKey();
+               IsSuccess(nextCommand.InputKey());
             }
         }
     }
@@ -58,5 +66,29 @@ public class CommandManager : MonoSingleton<CommandManager>
             commands.RemoveAt(0);
         }
         else MakeCommand(defficult);
+    }
+
+    private void IsSuccess(bool input)
+    {
+        if(input)
+        {
+            nextCommand.Pooling();
+            SetNextCommand();
+        }
+        else
+        {
+            ChangeDevPersent(-2);
+        }
+    }
+
+    private void ChangeDevPersent(int value)
+    {
+        devPersent = Mathf.Clamp(devPersent += value, 0, 100);
+        devPersentTmp.SetText(devPersent + " %");
+
+        if(devPersent>=100)
+        {
+            GameManager.Instance.GameClear();
+        }
     }
 }
