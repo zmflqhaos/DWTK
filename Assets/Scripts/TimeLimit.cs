@@ -7,6 +7,7 @@ public class TimeLimit : MonoSingleton<TimeLimit>
 {
     public float timer;
     public float currentTimer;
+    public bool isFinish;
     [SerializeField] private Image gage;
 
     private void Start()
@@ -16,6 +17,7 @@ public class TimeLimit : MonoSingleton<TimeLimit>
 
     private void Update()
     {
+        if (isFinish) return;
         currentTimer -= Time.deltaTime;
         gage.fillAmount = currentTimer / timer;
 

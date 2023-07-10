@@ -10,6 +10,7 @@ public class CommandManager : MonoSingleton<CommandManager>
     public Transform commandTrs;
 
     public bool isOpen;
+    public bool isFinish;
 
     [SerializeField] private int defficult;
     [SerializeField] GameObject commandTrsObj;
@@ -42,6 +43,7 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     private void InputCheck()
     {
+        if (isFinish) return;
         if(Input.GetKeyDown(KeyCode.Return))
         {
             isOpen = !isOpen;
@@ -83,12 +85,16 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     private void ChangeDevPersent(int value)
     {
-        devPersent = Mathf.Clamp(devPersent += value, 0, 100);
+        devPersent = Mathf.Clamp(devPersent += value, -100, 100);
         devPersentTmp.SetText(devPersent + " %");
 
         if(devPersent>=100)
         {
             GameManager.Instance.GameClear();
+        }
+        if(devPersent<=-100)
+        {
+            GameManager.Instance.GameOver();
         }
     }
 }
