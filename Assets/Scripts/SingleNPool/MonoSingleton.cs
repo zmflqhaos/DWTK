@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private static bool shuttingDown = false;
     private static object locker = new object();
 
     private static T instance = null;
@@ -12,12 +11,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
-            if(shuttingDown)
-            {
-                Debug.LogWarning("[Singleton] Instance " + typeof(T)+" is smalled. returning null.");
-                return null;
-            }
-
             lock(locker)
             {
                 if (instance == null)
@@ -32,15 +25,5 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
             return instance;
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        shuttingDown = true;
-    }
-
-    private void OnDestroy()
-    {
-        shuttingDown = true;
     }
 }

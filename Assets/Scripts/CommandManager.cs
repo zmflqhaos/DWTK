@@ -13,7 +13,6 @@ public class CommandManager : MonoSingleton<CommandManager>
     public bool isFinish;
 
     [SerializeField] private int defficult;
-    [SerializeField] GameObject commandTrsObj;
 
     private int devPersent = -10;
     [SerializeField] TextMeshProUGUI devPersentTmp;
@@ -21,7 +20,7 @@ public class CommandManager : MonoSingleton<CommandManager>
     private void Start()
     {
         MakeCommand(defficult);
-        commandTrsObj.SetActive(false);
+        commandTrs.gameObject.SetActive(false);
     }
 
     public void MakeCommand(int summonCommand)
@@ -47,7 +46,7 @@ public class CommandManager : MonoSingleton<CommandManager>
         if(Input.GetKeyDown(KeyCode.Return))
         {
             isOpen = !isOpen;
-            commandTrsObj.SetActive(isOpen);
+            commandTrs.gameObject.SetActive(isOpen);
         }
         else
         {
