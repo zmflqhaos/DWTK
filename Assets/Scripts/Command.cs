@@ -7,7 +7,6 @@ public class Command : PoolObject
 {
     [SerializeField]
     private KeyCode key;
-    private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
     private bool isSetted;
     [SerializeField] private TextMeshProUGUI text;
 
@@ -15,13 +14,12 @@ public class Command : PoolObject
     {
         if (isSetted) return;
         isSetted = true;
-        key = keyCodes[Random.Range(0, 4)];
+        key = CommandManager.Instance.SendRandomKeyCode();
         text.SetText(key.ToString());
     }
 
     public bool InputKey()
     {
-        Debug.Log("Èþ");
         bool returnValue = false;
         if(Input.GetKey(key))
         {

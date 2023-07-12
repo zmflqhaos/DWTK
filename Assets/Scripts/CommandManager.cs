@@ -3,23 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public enum Difficult : int
+{
+    Loser = 4,
+    Very_Easy = 6,
+    Easy = 9,
+    Normal = 12,
+    Hard = 15,
+    Very_Hard = 18,
+    DeadLine = 26
+}
+
 public class CommandManager : MonoSingleton<CommandManager>
 {
     public List<Command> commands;
     public Command nextCommand;
     public Transform commandTrs;
 
+    private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E, KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.R, KeyCode.F, KeyCode.V, KeyCode.T,
+                                  KeyCode.G, KeyCode.B, KeyCode.Y, KeyCode.H, KeyCode.N, KeyCode.U, KeyCode.J, KeyCode.M, KeyCode.I, KeyCode.K, KeyCode.O, KeyCode.L, KeyCode.P};
+
+
     public bool isOpen;
     public bool isFinish;
 
-    [SerializeField] private int defficult;
+    [SerializeField] Difficult difficult;
 
     private int devPersent = -10;
     [SerializeField] TextMeshProUGUI devPersentTmp;
 
     private void Start()
     {
-        MakeCommand(defficult);
+        MakeCommand((int)difficult / 3 + 3);
         commandTrs.gameObject.SetActive(false);
     }
 
@@ -66,7 +81,7 @@ public class CommandManager : MonoSingleton<CommandManager>
             nextCommand = commands[0];
             commands.RemoveAt(0);
         }
-        else MakeCommand(defficult);
+        else MakeCommand((int)difficult / 3 + 3);
     }
 
     private void IsSuccess(bool input)
@@ -95,5 +110,10 @@ public class CommandManager : MonoSingleton<CommandManager>
         {
             GameManager.Instance.GameOver();
         }
+    }
+
+    public KeyCode SendRandomKeyCode()
+    {
+        return keyCodes[Random.Range(0, (int)difficult)];
     }
 }
