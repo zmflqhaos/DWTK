@@ -27,14 +27,13 @@ public class CommandManager : MonoSingleton<CommandManager>
     public bool isOpen;
     public bool isFinish;
 
-    [SerializeField] Difficult difficult;
-
     private int devPersent = -10;
     [SerializeField] TextMeshProUGUI devPersentTmp;
 
     private void Start()
     {
-        MakeCommand((int)difficult / 3 + 3);
+        Debug.Log(GameManager.difficult.ToString());
+        MakeCommand((int)GameManager.difficult / 3 + 3);
         commandTrs.gameObject.SetActive(false);
     }
 
@@ -81,7 +80,7 @@ public class CommandManager : MonoSingleton<CommandManager>
             nextCommand = commands[0];
             commands.RemoveAt(0);
         }
-        else MakeCommand((int)difficult / 3 + 3);
+        else MakeCommand((int)GameManager.difficult / 3 + 3);
     }
 
     private void IsSuccess(bool input)
@@ -114,6 +113,6 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     public KeyCode SendRandomKeyCode()
     {
-        return keyCodes[Random.Range(0, (int)difficult)];
+        return keyCodes[Random.Range(0, (int)GameManager.difficult)];
     }
 }

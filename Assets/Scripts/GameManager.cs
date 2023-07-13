@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public static Difficult difficult = Difficult.Loser;
     private bool isFinish;
     [SerializeField] GameObject gameClearPanel;
     [SerializeField] GameObject gameOverPanel;
