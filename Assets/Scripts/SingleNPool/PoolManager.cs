@@ -21,6 +21,7 @@ public class PoolManager : MonoSingleton<PoolManager>
                 poolObject = Instantiate(pool.gameObject);
                 poolObject.name = pool.name;
                 poolObject.transform.SetParent(gameObject.transform);
+                poolObject.GetComponent<PoolObject>().Instaniate();
                 poolObject.SetActive(false);
             }
         }
@@ -32,6 +33,7 @@ public class PoolManager : MonoSingleton<PoolManager>
         if (_object == null)
         {
             _object = Instantiate(poolingList[name]);
+            _object.GetComponent<PoolObject>().Instaniate();
             _object.name = name;
         }
         _object.SetActive(true);

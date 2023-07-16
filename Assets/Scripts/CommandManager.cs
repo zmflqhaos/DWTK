@@ -19,6 +19,7 @@ public class CommandManager : MonoSingleton<CommandManager>
     public List<Command> commands;
     public Command nextCommand;
     public Transform commandTrs;
+    [SerializeField] private AudioClip inputSound;
 
     private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E, KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.R, KeyCode.F, KeyCode.V, KeyCode.T,
                                   KeyCode.G, KeyCode.B, KeyCode.Y, KeyCode.H, KeyCode.N, KeyCode.U, KeyCode.J, KeyCode.M, KeyCode.I, KeyCode.K, KeyCode.O, KeyCode.L, KeyCode.P};
@@ -68,7 +69,8 @@ public class CommandManager : MonoSingleton<CommandManager>
 
             if (Input.anyKeyDown)
             {
-               IsSuccess(nextCommand.InputKey());
+                IsSuccess(nextCommand.InputKey());
+                SoundManager.Instance.Play(inputSound, Sound.EFFECT);
             }
         }
     }

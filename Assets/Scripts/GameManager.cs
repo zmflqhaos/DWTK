@@ -9,6 +9,12 @@ public class GameManager : MonoSingleton<GameManager>
     private bool isFinish;
     [SerializeField] GameObject gameClearPanel;
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] AudioClip bgm;
+
+    private void Start()
+    {
+        SoundManager.Instance.Play(bgm, Sound.BGM);
+    }
 
     public void GameClear()
     {

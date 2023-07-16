@@ -1148,9 +1148,9 @@ MonoBehaviour:
   commands: []
   nextCommand: {fileID: 0}
   commandTrs: {fileID: 1713461277}
+  inputSound: {fileID: 8300000, guid: 1310e828927fa9e4490c1ea35eca759b, type: 3}
   isOpen: 0
   isFinish: 0
-  difficult: 4
   devPersentTmp: {fileID: 1947735405}
 --- !u!1 &753427491
 GameObject:
@@ -2408,6 +2408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameClearPanel: {fileID: 1975529094}
   gameOverPanel: {fileID: 863615689}
+  bgm: {fileID: 8300000, guid: c2bb7f7189708bd4f9d383223276206a, type: 3}
 --- !u!4 &2095799932
 Transform:
   m_ObjectHideFlags: 0
