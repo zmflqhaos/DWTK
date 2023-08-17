@@ -22,7 +22,7 @@ public class TitleManager : MonoBehaviour
         else dificultInt--;
 
         GameManager.difficult = difficults[dificultInt];
-        difficultText.SetText(GameManager.difficult.ToString());
+        difficultText.SetText(TransKor());
     }
 
     public void RightArrow()
@@ -31,7 +31,7 @@ public class TitleManager : MonoBehaviour
         else dificultInt++;
 
         GameManager.difficult = difficults[dificultInt];
-        difficultText.SetText(GameManager.difficult.ToString());
+        difficultText.SetText(TransKor());
     }
 
     public void LoadGameScene()
@@ -42,5 +42,37 @@ public class TitleManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    private string TransKor()
+    {
+        string a = null;
+
+        switch(GameManager.difficult)
+        {
+            case Difficult.Loser: 
+                a = "응애";
+                break;
+            case Difficult.Very_Easy:
+                a = "정말 쉽네요";
+                break;
+            case Difficult.Easy:
+                a = "쉽네요";
+                break;
+            case Difficult.Normal:
+                a = "할만하네요";
+                break;
+            case Difficult.Hard:
+                a = "좀 어렵네요";
+                break;
+            case Difficult.Very_Hard:
+                a = "꽤 어렵네요";
+                break;
+            case Difficult.DeadLine:
+                a = "죽어라";
+                break;
+        }
+
+        return a;
     }
 }
