@@ -1842,20 +1842,36 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6810d210befcc9940817cd650f37d00d, type: 3}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2159,20 +2175,36 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6810d210befcc9940817cd650f37d00d, type: 3}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2225,20 +2257,36 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6810d210befcc9940817cd650f37d00d, type: 3}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3054,20 +3102,36 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6810d210befcc9940817cd650f37d00d, type: 3}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3368,20 +3432,36 @@ PrefabInstance:
       value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6810d210befcc9940817cd650f37d00d, type: 3}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827790, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5320748535118827791, guid: 37c15becc9590a949beb8cc810615787, type: 3}
       propertyPath: m_LocalPosition.z
