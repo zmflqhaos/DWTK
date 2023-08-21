@@ -45,4 +45,9 @@ public class GameManager : MonoSingleton<GameManager>
         CommandManager.Instance.isFinish = false;
         SceneManager.LoadScene("GameScene");
     }
+
+    public void LoadTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 }
