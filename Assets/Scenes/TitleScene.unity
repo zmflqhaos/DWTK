@@ -893,6 +893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultPanel: {fileID: 766044341}
   difficultText: {fileID: 475640392}
+  uiSound: {fileID: 8300000, guid: 2bdad6ed47d7fb14d91ad8b44a6caab1, type: 3}
+  bgm: {fileID: 8300000, guid: ea030910ae9809243b3d217335fc04ec, type: 3}
 --- !u!4 &1059474303
 Transform:
   m_ObjectHideFlags: 0

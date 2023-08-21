@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -10,6 +11,23 @@ public class TitleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI difficultText;
     private Difficult[] difficults = { Difficult.Loser, Difficult.Very_Easy, Difficult.Easy, Difficult.Normal, Difficult.Hard, Difficult.Very_Hard, Difficult.DeadLine };
     private int dificultInt = 0;
+    [SerializeField] private AudioClip uiSound;
+    [SerializeField] private AudioClip bgm;
+
+    private void Start()
+    {
+        SoundManager.Instance.Play(bgm, Sound.BGM);
+        Button[] buttons = FindObjectsOfType<Button>(true);
+        foreach(Button btn in buttons)
+        {
+            btn.onClick.AddListener(UIClick);
+        }
+    }
+
+    private void UIClick()
+    {
+        SoundManager.Instance.Play(uiSound, Sound.UI);
+    }
 
     public void ActiveDifficultPanel()
     {

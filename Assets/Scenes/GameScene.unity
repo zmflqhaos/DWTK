@@ -1422,10 +1422,14 @@ MonoBehaviour:
   commands: []
   nextCommand: {fileID: 0}
   commandTrs: {fileID: 1713461277}
-  inputSound: {fileID: 8300000, guid: 1310e828927fa9e4490c1ea35eca759b, type: 3}
+  inputSound: {fileID: 8300000, guid: 95311012e8e1d1b4b8a5db4a1e4e4b83, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1310e828927fa9e4490c1ea35eca759b, type: 3}
+  openSound: {fileID: 8300000, guid: 7dffce4a77a30384cae247ba634664fc, type: 3}
+  closeSound: {fileID: 8300000, guid: 8398b3e57e8b4f44790d344ca4ff35dd, type: 3}
   isOpen: 0
   isFinish: 0
   devPersentTmp: {fileID: 1947735405}
+  teacher: {fileID: 1581917377}
 --- !u!1 &616109038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,6 +2987,7 @@ GameObject:
   - component: {fileID: 1581917375}
   - component: {fileID: 1581917374}
   - component: {fileID: 1581917376}
+  - component: {fileID: 1581917377}
   m_Layer: 0
   m_Name: Teacher
   m_TagString: Untagged
@@ -3077,6 +3082,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1581917377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581917373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3c6f2a511846549bd8fec1a4e0e142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1621879535
 GameObject:
   m_ObjectHideFlags: 0

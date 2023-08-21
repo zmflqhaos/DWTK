@@ -20,6 +20,9 @@ public class CommandManager : MonoSingleton<CommandManager>
     public Command nextCommand;
     public Transform commandTrs;
     [SerializeField] private AudioClip inputSound;
+    [SerializeField] private AudioClip wrongSound;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
 
     private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E, KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.R, KeyCode.F, KeyCode.V, KeyCode.T,
                                   KeyCode.G, KeyCode.B, KeyCode.Y, KeyCode.H, KeyCode.N, KeyCode.U, KeyCode.J, KeyCode.M, KeyCode.I, KeyCode.K, KeyCode.O, KeyCode.L, KeyCode.P};
@@ -30,6 +33,7 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     private int devPersent = -10;
     [SerializeField] TextMeshProUGUI devPersentTmp;
+    [SerializeField] Teacher teacher;
 
     private void Start()
     {
@@ -52,7 +56,14 @@ public class CommandManager : MonoSingleton<CommandManager>
 
     private void Update()
     {
+        TeacherCheck();
         InputCheck();
+    }
+
+    private void TeacherCheck()
+    {
+        if (teacher.IsBack && isOpen && !isFinish)
+            GameManager.Instance.GameOver();
     }
 
     private void InputCheck()
@@ -62,6 +73,8 @@ public class CommandManager : MonoSingleton<CommandManager>
         {
             isOpen = !isOpen;
             commandTrs.gameObject.SetActive(isOpen);
+            if(isOpen) SoundManager.Instance.Play(openSound, Sound.EFFECT);
+            else SoundManager.Instance.Play(closeSound, Sound.EFFECT);
         }
         else
         {
@@ -70,7 +83,6 @@ public class CommandManager : MonoSingleton<CommandManager>
             if (Input.anyKeyDown)
             {
                 IsSuccess(nextCommand.InputKey());
-                SoundManager.Instance.Play(inputSound, Sound.EFFECT);
             }
         }
     }
@@ -91,10 +103,12 @@ public class CommandManager : MonoSingleton<CommandManager>
         {
             nextCommand.Pooling();
             SetNextCommand();
+            SoundManager.Instance.Play(inputSound, Sound.EFFECT, Random.Range(0.75f, 1.25f));
         }
         else
         {
             ChangeDevPersent(-2);
+            SoundManager.Instance.Play(wrongSound, Sound.EFFECT);
         }
     }
 
