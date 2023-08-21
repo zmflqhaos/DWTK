@@ -35,6 +35,9 @@ public class CommandManager : MonoSingleton<CommandManager>
     [SerializeField] TextMeshProUGUI devPersentTmp;
     [SerializeField] Teacher teacher;
 
+    [SerializeField] GameObject openTab;
+    [SerializeField] GameObject closeTab;
+
     private void Start()
     {
         Debug.Log(GameManager.difficult.ToString());
@@ -73,8 +76,18 @@ public class CommandManager : MonoSingleton<CommandManager>
         {
             isOpen = !isOpen;
             commandTrs.gameObject.SetActive(isOpen);
-            if(isOpen) SoundManager.Instance.Play(openSound, Sound.EFFECT);
-            else SoundManager.Instance.Play(closeSound, Sound.EFFECT);
+            if (isOpen)
+            {
+                SoundManager.Instance.Play(openSound, Sound.EFFECT);
+                openTab.SetActive(true);
+                closeTab.SetActive(false);
+            }
+            else
+            {
+                SoundManager.Instance.Play(closeSound, Sound.EFFECT);
+                openTab.SetActive(false);
+                closeTab.SetActive(true);
+            }
         }
         else
         {
