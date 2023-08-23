@@ -48,6 +48,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void LoadTitleScene()
     {
+        difficult = Difficult.Loser;
         SceneManager.LoadScene("TitleScene");
     }
 }
