@@ -14,7 +14,7 @@ public class Command : PoolObject
     {
         if (isSetted) return;
         isSetted = true;
-        key = CommandManager.Instance.SendRandomKeyCode();
+        key = newCommandManager.Instance.SendRandomKeyCode();
         text.SetText(key.ToString());
     }
 

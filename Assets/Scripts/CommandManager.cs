@@ -24,28 +24,28 @@ public class CommandManager : MonoSingleton<CommandManager>
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
 
-    private KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E, KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.R, KeyCode.F, KeyCode.V, KeyCode.T,
+    protected KeyCode[] keyCodes = {KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Q, KeyCode.E, KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.R, KeyCode.F, KeyCode.V, KeyCode.T,
                                   KeyCode.G, KeyCode.B, KeyCode.Y, KeyCode.H, KeyCode.N, KeyCode.U, KeyCode.J, KeyCode.M, KeyCode.I, KeyCode.K, KeyCode.O, KeyCode.L, KeyCode.P};
 
 
     public bool isOpen;
     public bool isFinish;
 
-    private int devPersent = -10;
-    [SerializeField] TextMeshProUGUI devPersentTmp;
-    [SerializeField] Teacher teacher;
+    protected int devPersent = -10;
+    [SerializeField] protected TextMeshProUGUI devPersentTmp;
+    [SerializeField] protected Teacher teacher;
 
-    [SerializeField] GameObject openTab;
-    [SerializeField] GameObject closeTab;
+    [SerializeField] protected GameObject openTab;
+    [SerializeField] protected GameObject closeTab;
 
-    private void Start()
+    protected void Start()
     {
         Debug.Log(GameManager.difficult.ToString());
         MakeCommand((int)GameManager.difficult / 3 + 3);
         commandTrs.gameObject.SetActive(false);
     }
 
-    public void MakeCommand(int summonCommand)
+    protected void MakeCommand(int summonCommand)
     {
         ChangeDevPersent(10);
         for (int i=0; i<summonCommand; i++)
@@ -57,19 +57,19 @@ public class CommandManager : MonoSingleton<CommandManager>
         SetNextCommand();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         TeacherCheck();
         InputCheck();
     }
 
-    private void TeacherCheck()
+    protected void TeacherCheck()
     {
         if (teacher.IsBack && isOpen && !isFinish)
             GameManager.Instance.GameOver();
     }
 
-    private void InputCheck()
+    protected void InputCheck()
     {
         if (isFinish) return;
         if(Input.GetKeyDown(KeyCode.Return))
@@ -100,7 +100,7 @@ public class CommandManager : MonoSingleton<CommandManager>
         }
     }
 
-    private void SetNextCommand()
+    protected void SetNextCommand()
     {
         if (commands.Count > 0)
         {
@@ -110,7 +110,7 @@ public class CommandManager : MonoSingleton<CommandManager>
         else MakeCommand((int)GameManager.difficult / 3 + 3);
     }
 
-    private void IsSuccess(bool input)
+    protected void IsSuccess(bool input)
     {
         if(input)
         {
@@ -125,7 +125,7 @@ public class CommandManager : MonoSingleton<CommandManager>
         }
     }
 
-    private void ChangeDevPersent(int value)
+    protected void ChangeDevPersent(int value)
     {
         devPersent = Mathf.Clamp(devPersent += value, -100, 100);
         devPersentTmp.SetText(devPersent + " %");
