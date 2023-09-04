@@ -12,6 +12,15 @@ public class newCommandManager : CommandManager
         StartCoroutine(BugCoru());
     }
 
+    protected override void IsSuccess(bool input)
+    {
+        if(input)
+        {
+            nextCommand.transform.localScale = new Vector3(1, 1, 1);
+        }
+        base.IsSuccess(input);
+    }
+
     protected override void Update()
     {
         InputCheck();

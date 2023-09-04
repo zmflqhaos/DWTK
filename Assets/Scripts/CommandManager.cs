@@ -110,7 +110,7 @@ public class CommandManager : MonoSingleton<CommandManager>
         else MakeCommand((int)GameManager.difficult / 3 + 3);
     }
 
-    protected void IsSuccess(bool input)
+    protected virtual void IsSuccess(bool input)
     {
         if(input)
         {
