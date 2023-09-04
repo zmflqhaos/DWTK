@@ -38,7 +38,7 @@ public class CommandManager : MonoSingleton<CommandManager>
     [SerializeField] protected GameObject openTab;
     [SerializeField] protected GameObject closeTab;
 
-    protected void Start()
+    protected virtual void Start()
     {
         Debug.Log(GameManager.difficult.ToString());
         MakeCommand((int)GameManager.difficult / 3 + 3);

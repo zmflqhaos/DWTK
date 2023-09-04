@@ -43,7 +43,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         TimeLimit.Instance.isFinish = false;
         CommandManager.Instance.isFinish = false;
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadTitleScene()
