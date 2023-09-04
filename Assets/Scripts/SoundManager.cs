@@ -29,6 +29,9 @@ public class SoundManager : MonoSingleton<SoundManager>
     public void Init()
     {
         GameObject root = GameObject.Find("SoundManager");
+
+        if (root != gameObject) Destroy(gameObject);
+
         DontDestroyOnLoad(root);
 
         string[] soundNames = System.Enum.GetNames(typeof(Sound));

@@ -5,8 +5,11 @@ using UnityEngine;
 public class ModeChange : MonoBehaviour
 {
     [SerializeField] private ModeCommand[] commands;
-
+    [SerializeField] private TitleManager titleManager;
     [SerializeField] private KeyCode[] input = new KeyCode[10];
+
+    [SerializeField] private GameObject[] modePanel;
+
     private int witch = 0;
     private int i = 0;
 
@@ -65,10 +68,21 @@ public class ModeChange : MonoBehaviour
     {
         if (commands[i].SameCheck(input))
         {
-            Debug.Log("커맨드 작동!");
             input = new KeyCode[10];
             witch = 0;
-            //여기에 각 커맨드마다 입력 성공했을 때의 효과를 발동시키는 그 뭐시기를 제작
+            Invoke("Mode" + i, 0);
         }
+    }
+
+    private void Mode0()
+    {
+        Debug.Log("모드 0 작동");
+        titleManager.modeInt = 1;
+        modePanel[0].SetActive(true);
+    }
+
+    private void Mode1()
+    {
+        Debug.Log("모드 1 작동");
     }
 }

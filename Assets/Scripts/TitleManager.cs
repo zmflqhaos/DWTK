@@ -11,6 +11,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI difficultText;
     private Difficult[] difficults = { Difficult.Loser, Difficult.Very_Easy, Difficult.Easy, Difficult.Normal, Difficult.Hard, Difficult.Very_Hard, Difficult.DeadLine };
     private int dificultInt = 0;
+    public int modeInt { get; set; }
     [SerializeField] private AudioClip uiSound;
     [SerializeField] private AudioClip bgm;
 
@@ -18,6 +19,7 @@ public class TitleManager : MonoBehaviour
     {
         SoundManager.Instance.Play(bgm, Sound.BGM);
         Button[] buttons = FindObjectsOfType<Button>(true);
+        modeInt = 0;
         foreach(Button btn in buttons)
         {
             btn.onClick.AddListener(UIClick);
@@ -54,7 +56,7 @@ public class TitleManager : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Game" + modeInt + "Scene");
     }
 
     public void Exit()
