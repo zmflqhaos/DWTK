@@ -5,6 +5,8 @@ using UnityEngine;
 public class newCommandManager : CommandManager
 {
     private bool isBuging;
+    private int point;
+    [SerializeField] private Transform arrowTrs;
 
     protected override void Start()
     {
@@ -24,6 +26,19 @@ public class newCommandManager : CommandManager
     protected override void Update()
     {
         InputCheck();
+        arrowTrs.gameObject.SetActive(commandTrs.gameObject.activeSelf);
+        BugFixCheck();
+    }
+
+    private void BugFixCheck()
+    {
+        if (!isBuging) return;
+
+        if(point<devPersent)
+        {
+            isBuging = false;
+            commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private IEnumerator BugCoru()
@@ -32,12 +47,13 @@ public class newCommandManager : CommandManager
         {
             if (!isBuging)
             {
-                if (Random.Range(1, 101) > 80)
+                if (Random.Range(1, 101) > 75)
                 {
                     isBuging = true;
-                    int rand = Random.Range(1, 4);
+                    int rand = Random.Range(1, 5);
 
-                    StartCoroutine("RandBug" + rand);
+                    Invoke("RandBug" + rand, 0);
+                    point = devPersent;
                 }
             }
             else
@@ -48,34 +64,23 @@ public class newCommandManager : CommandManager
         }
     }
 
-    private IEnumerator RandBug1()
+    private void RandBug1()
     {
-        commandTrs.transform.localScale = new Vector3(1, -1, 1);
-
-        yield return new WaitForSeconds(3f);
-
-        commandTrs.transform.localScale = new Vector3(1, 1, 1);
-        isBuging = false;
+        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(1, -1, 1);
     }
 
-    private IEnumerator RandBug2()
+    private void RandBug2()
     {
-        commandTrs.transform.localScale = new Vector3(-1, -1, 1);
-
-        yield return new WaitForSeconds(3f);
-
-        commandTrs.transform.localScale = new Vector3(1, 1, 1);
-        isBuging = false;
+        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(-1, 1, 1);
     }
 
-    private IEnumerator RandBug3()
+    private void RandBug3()
     {
-        float rand = Random.Range(0.6f, 1.5f);
-        commandTrs.transform.localScale = new Vector3(rand, rand, 1);
+        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(1.2f, 1.2f, 1);
+    }
 
-        yield return new WaitForSeconds(3f);
-
-        commandTrs.transform.localScale = new Vector3(1, 1, 1);
-        isBuging = false;
+    private void RandBug4()
+    {
+        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(0.5f, 0.5f, 1);
     }
 }
