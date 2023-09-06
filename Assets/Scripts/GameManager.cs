@@ -11,8 +11,12 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] AudioClip bgm;
 
+    private bool isGameOver = false;
+    private GameOver gameOver = null;
+
     private void Start()
     {
+        gameOver = gameOverPanel.GetComponent<GameOver>();
         SoundManager.Instance.Play(bgm, Sound.BGM);
     }
 
@@ -26,7 +30,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void GameOver()
     {
+        if (isGameOver)
+            return;
+
+        isGameOver = true;
+
         gameOverPanel.SetActive(true);
+        gameOver.GameOverStart();
+
         isFinish = true;
         TimeLimit.Instance.isFinish = true;
         CommandManager.Instance.isFinish = true;
