@@ -4821,8 +4821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btns: {fileID: 133866581}
-  shakeTime: 30
-  radius: 8
+  shakeTime: 15
+  radius: 16
   waitSec: 0.1
 --- !u!1001 &1742076956
 PrefabInstance:

@@ -118,8 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d2577e21154654eb5bc05a29bc1d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeTime: 30
-  radius: 0.5
+  btns: {fileID: 0}
+  shakeTime: 20
+  radius: 0.8
   waitSec: 0.05
 --- !u!1 &715526157024929577
 GameObject:

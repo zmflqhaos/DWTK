@@ -58,7 +58,7 @@ public class newCommandManager : CommandManager
             }
             else
             {
-                ChangeDevPersent(-1);
+                ChangeDevPersent(-2);
             }
             yield return new WaitForSeconds(1.5f);
         }
