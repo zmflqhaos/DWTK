@@ -15,6 +15,8 @@ public class ModeChange : MonoBehaviour
 
     private void Update()
     {
+        if (i >= commands.Length) i--;
+
         if(Input.GetKeyDown(KeyCode.Return))
         {
             AnswerCheck();
@@ -41,12 +43,18 @@ public class ModeChange : MonoBehaviour
         }
         else
         {
+            int point = 0;
             witch++;
+            if(commands[i].command.Length<witch)
+            {
+                input = new KeyCode[10];
+                witch = 0;
+                return;
+            }
             if (Input.GetKeyDown(commands[i].command[witch-1]))
             {
                 input[witch-1] = commands[i].command[witch-1];
             }
-            int point = 0;
             for (int j = 0; j < witch; j++)
             {
                 if (input[j] == commands[i].command[j])
