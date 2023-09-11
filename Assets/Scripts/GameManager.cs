@@ -13,16 +13,19 @@ public class GameManager : MonoSingleton<GameManager>
 
     private bool isGameOver = false;
     private GameOver gameOver = null;
+    private GameClear gameClear = null;
 
     private void Start()
     {
         gameOver = gameOverPanel.GetComponent<GameOver>();
+        gameClear = gameClearPanel.GetComponent<GameClear>();
         SoundManager.Instance.Play(bgm, Sound.BGM);
     }
 
     public void GameClear()
     {
         gameClearPanel.SetActive(true);
+        gameClear.GameClearStart();
         isFinish = true;
         TimeLimit.Instance.isFinish = true;
         CommandManager.Instance.isFinish = true;
