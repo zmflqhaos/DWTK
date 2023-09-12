@@ -17,7 +17,7 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.Play(bgm, Sound.BGM);
+        SoundManager.Instance.Play(bgm, Sound.BGM, 0.6f);
         Button[] buttons = FindObjectsOfType<Button>(true);
         modeInt = 0;
         foreach(Button btn in buttons)

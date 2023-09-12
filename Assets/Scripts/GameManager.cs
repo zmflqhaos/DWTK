@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         gameOver = gameOverPanel.GetComponent<GameOver>();
         gameClear = gameClearPanel.GetComponent<GameClear>();
-        SoundManager.Instance.Play(bgm, Sound.BGM);
+        SoundManager.Instance.Play(bgm, Sound.BGM, 0.7f);
     }
 
     public void GameClear()

@@ -50,10 +50,11 @@ public class SoundManager : MonoSingleton<SoundManager>
         audioSources[(int)Sound.UI].outputAudioMixerGroup = ui;
     }
 
-    public void Play(AudioClip clip, Sound sound, float pitch = 1.0f)
+    public void Play(AudioClip clip, Sound sound, float volume = 1, float pitch = 1.0f)
     {
         AudioSource audioSource = audioSources[(int)sound];
         audioSource.pitch = pitch;
+        audioSource.volume = volume;
         if (sound == Sound.BGM)
         {
             if (audioSource.isPlaying) audioSource.Stop();
