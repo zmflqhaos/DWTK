@@ -66,4 +66,3 @@ public class GameManager : MonoSingleton<GameManager>
         SceneManager.LoadScene("TitleScene");
     }
 }
-;

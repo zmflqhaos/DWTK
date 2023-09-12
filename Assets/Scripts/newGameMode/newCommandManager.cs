@@ -6,6 +6,7 @@ public class newCommandManager : CommandManager
 {
     private bool isBuging;
     private int point;
+    private int difficultValue;
     [SerializeField] private Transform arrowTrs;
 
     protected override void Start()
@@ -47,10 +48,10 @@ public class newCommandManager : CommandManager
         {
             if (!isBuging)
             {
-                if (Random.Range(1, 101) > 75)
+                if (Random.Range(1, 101) > 70 - difficultValue)
                 {
                     isBuging = true;
-                    int rand = Random.Range(1, 5);
+                    int rand = Random.Range(1, 4);
 
                     Invoke("RandBug" + rand, 0);
                     point = devPersent;
@@ -76,11 +77,34 @@ public class newCommandManager : CommandManager
 
     private void RandBug3()
     {
-        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(1.2f, 1.2f, 1);
+        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(0.5f, 0.5f, 1);
     }
 
-    private void RandBug4()
+    private void SetDifficultValue()
     {
-        commandTrs.transform.localScale = arrowTrs.localScale = new Vector3(0.5f, 0.5f, 1);
+        switch (GameManager.difficult)
+        {
+            case Difficult.Loser:
+                difficultValue = -5;
+                break;
+            case Difficult.Very_Easy:
+                difficultValue = 0;
+                break;
+            case Difficult.Easy:
+                difficultValue = 5;
+                break;
+            case Difficult.Normal:
+                difficultValue = 10;
+                break;
+            case Difficult.Hard:
+                difficultValue = 15;
+                break;
+            case Difficult.Very_Hard:
+                difficultValue = 20;
+                break;
+            case Difficult.DeadLine:
+                difficultValue = 25;
+                break;
+        }
     }
 }
