@@ -407,7 +407,10 @@ MonoBehaviour:
   modePanel:
   - {fileID: 509031955}
   - {fileID: 1539362883}
-  mode2Bgm: {fileID: 8300000, guid: a02b7af7f2f998049b4b4f2e5e3a31f3, type: 3}
+  mode2Bgm:
+  - {fileID: 8300000, guid: a02b7af7f2f998049b4b4f2e5e3a31f3, type: 3}
+  - {fileID: 8300000, guid: d60331f4701d62d4498514871c098562, type: 3}
+  - {fileID: 8300000, guid: e5a9993b29df3d846ac1752b136e5879, type: 3}
 --- !u!4 &361894807
 Transform:
   m_ObjectHideFlags: 0

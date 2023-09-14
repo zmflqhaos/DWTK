@@ -5849,7 +5849,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameClearPanel: {fileID: 1975529094}
   gameOverPanel: {fileID: 863615689}
-  bgm: {fileID: 8300000, guid: c2bb7f7189708bd4f9d383223276206a, type: 3}
+  bgm:
+  - {fileID: 8300000, guid: c2bb7f7189708bd4f9d383223276206a, type: 3}
 --- !u!4 &2095799932
 Transform:
   m_ObjectHideFlags: 0

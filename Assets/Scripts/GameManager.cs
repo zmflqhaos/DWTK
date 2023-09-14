@@ -9,7 +9,7 @@ public class GameManager : MonoSingleton<GameManager>
     private bool isFinish;
     [SerializeField] GameObject gameClearPanel;
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] AudioClip bgm;
+    [SerializeField] AudioClip[] bgm;
 
     private bool isGameOver = false;
     private GameOver gameOver = null;
@@ -19,7 +19,16 @@ public class GameManager : MonoSingleton<GameManager>
     {
         gameOver = gameOverPanel.GetComponent<GameOver>();
         gameClear = gameClearPanel.GetComponent<GameClear>();
-        SoundManager.Instance.Play(bgm, Sound.BGM, 0.7f);
+
+        int a = Random.Range(0, bgm.Length);
+        float volume = 0;
+        switch (a)
+        {
+            case 0: volume = 0.7f; break;
+            case 1: volume = 0.3f; break;
+            case 2: volume = 0.1f; break;
+        }
+        SoundManager.Instance.Play(bgm[a], Sound.BGM, volume);
     }
 
     public void GameClear()

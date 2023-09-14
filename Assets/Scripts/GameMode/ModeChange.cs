@@ -9,7 +9,7 @@ public class ModeChange : MonoBehaviour
     [SerializeField] private KeyCode[] input = new KeyCode[10];
 
     [SerializeField] private GameObject[] modePanel;
-    [SerializeField] private AudioClip mode2Bgm;
+    [SerializeField] private AudioClip[] mode2Bgm;
 
     private int witch = 0;
     private int i = 0;
@@ -95,6 +95,14 @@ public class ModeChange : MonoBehaviour
         Debug.Log("모드 1 작동");
         titleManager.modeInt = 2;
         modePanel[1].SetActive(true);
-        SoundManager.Instance.Play(mode2Bgm, Sound.BGM);
+        int a = Random.Range(0, mode2Bgm.Length);
+        float volume = 0;
+        switch(a)
+        {
+            case 0: volume = 1; break;
+            case 1: volume = 0.4f; break;
+            case 2: volume = 0.1f; break;
+        }
+        SoundManager.Instance.Play(mode2Bgm[a], Sound.BGM, volume);
     }
 }

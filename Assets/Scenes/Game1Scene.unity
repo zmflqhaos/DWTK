@@ -3387,7 +3387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameClearBtnAndText: {fileID: 656858202}
   gameClearSceneAnim: {fileID: 2145530242}
-  gameClearPlayer: {fileID: 0}
+  hintText: {fileID: 0}
 --- !u!1 &1265370963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,7 +5619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameClearPanel: {fileID: 1259746842}
   gameOverPanel: {fileID: 206501272}
-  bgm: {fileID: 8300000, guid: c2bb7f7189708bd4f9d383223276206a, type: 3}
+  bgm:
+  - {fileID: 8300000, guid: c2bb7f7189708bd4f9d383223276206a, type: 3}
 --- !u!4 &2095799932
 Transform:
   m_ObjectHideFlags: 0
