@@ -105,20 +105,4 @@ public class ModeChange : MonoBehaviour
         }
         SoundManager.Instance.Play(mode2Bgm[a], Sound.BGM, volume);
     }
-
-    private void Mode2()
-    {
-        Debug.Log("모드 2 작동");
-        titleManager.modeInt = 3;
-        modePanel[2].SetActive(true);
-        int a = Random.Range(0, mode2Bgm.Length);
-        float volume = 0;
-        switch (a)
-        {
-            case 0: volume = 1; break;
-            case 1: volume = 0.4f; break;
-            case 2: volume = 0.1f; break;
-        }
-        SoundManager.Instance.Play(mode2Bgm[a], Sound.BGM, volume);
-    }
 }
